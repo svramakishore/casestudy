@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+body{
+	background:url("../images/signupback2.jpg") no-repeat ;
+	background-size:auto 150%;
+	
+}
+.login{
+	border:1px solid black;
+	margin-left:50%;
+	width: 50%;
+	height: 35%;
+	padding:60px 0px 120px 60px;
+	margin-top:100px;
+	border-radius:25px;
+	background-image:url("../images/signupback1.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.form-group{
+	width:70%;
+}

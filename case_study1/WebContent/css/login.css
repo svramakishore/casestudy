@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+body{
+	background:url("../images/loginback3.png") no-repeat ;
+	background-size:100% 150%;
+	
+}
+.login{
+	border:1px solid black;
+	width: 63%;height: 342px;
+	padding-left: 73px;
+	border-radius:45;
+	background-image:url("../images/loginback1.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.containers{
+	padding-top:200px;
+	margin-left:30%;
+}

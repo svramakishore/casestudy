@@ -1,0 +1,102 @@
+
+ @media (min-width: 1200px) {
+
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+@media (max-width:768px){
+  .showBy{
+    display:none !important;
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px){
+body{
+    font-size:10px;
+}
+}
+.shopByBar{
+    width: 100%;
+    min-height: 76px;
+    height: auto;
+    background-color: #f3f3f3;
+    
+    
+}
+
+
+.shopByBar .container{
+    padding-left: 4em;
+}
+
+.shopBy{
+    font-size: 2.142em;
+    padding-right: 10px;
+    position: relative;
+    top: 15px;
+}
+.showBy{
+  position:absolute !important;
+  top: 10px;
+}
+
+
+.close-symbol:hover{
+	cursor: pointer;
+}
+.mainclear-filter:hover{
+	cursor: pointer;
+}
+
+
+
+
+
+
+.basic-filters th {
+    
+    
+    font-size: .9em !important;
+    padding-top: 10px !important;
+}
+@media (max-width: 768px){
+  
+  #filter-area{
+    float:left;
+    max-width: 100% !important;
+  }
+  .shopBy{
+    font-size: 1.5em;
+    padding-right: 0px;
+    position: relative;
+    top: 15px;
+  }
+  .shopByBar .container{
+    padding-left: 10px !impo;
+  }
+}
+
+
+
+.sortby-display {
+  display: none;
+}
+.new-class{
+  display: none !important;
+}
+.image :hover{
+  cursor: pointer !important;
+}
+body{
+  overflow-x:visible !important; 
+}
+.bookimage{
+  cursor: pointer !important;
+}
