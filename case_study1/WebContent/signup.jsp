@@ -59,6 +59,7 @@
 	    <div class="form-group">        
 	      <div class="col-sm-offset-2 col-sm-10">
 	        <button type="submit" class="btn btn-primary">Submit</button>
+	        <div  class="btn btn-primary" id="login">Login</div>
 	      </div>
 	    </div>
 	</form>
@@ -66,6 +67,7 @@
 </div>
 
 </form>
-
+ <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/signup.js"></script>
 </body>
 </html>

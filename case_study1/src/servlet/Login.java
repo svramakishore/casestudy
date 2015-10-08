@@ -27,6 +27,7 @@ public class Login extends HttpServlet {
         {
         	HttpSession session=request.getSession();  
             session.setAttribute("name",name); 
+            session.setAttribute("islogged", "yes");
            
         	request.getRequestDispatcher("home.jsp").forward(request,response);
 //           	response.setContentType("text/html");

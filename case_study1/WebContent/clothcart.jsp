@@ -26,12 +26,12 @@
 <div class="container ">
 	<div class="head">
         <div id="header" class=" text-primary ">
-        <strong class="text-left shipping" style="font-size:40px;">Shopping Bee</strong>
+        
          <div class="rightitems" >
-          <span ><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px"> Welcome <%= session.getAttribute("name")%></p></span>
-          <span><a href='mycart.jsp' style="font-size:14px;color:#09353A"><span class="glyphicon glyphicon-shopping-cart" style="padding-top:15px">Mycart</span></a></span>
-		<span><a href='LogoutServlet' style="padding-top:15px;font-size:14px;color:#E11F2A"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
-       
+          <span ><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px"> Welcome <span id="username"><%= session.getAttribute("name")%></p></span>
+          <span><a href='mycart.jsp' id="mycart"><span class="glyphicon glyphicon-shopping-cart">Mycart</span></a></span>
+		<span><a href='LogoutServlet' id="logout"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
+       <span><a href='signup.jsp'  id="signin"><span class="glyphicon glyphicon-user">SignUp/Login</span></a></span>
        </div>
        </div>
        </div>

@@ -1,6 +1,22 @@
 $(document).ready(function(){
+	$.ajax({
+		url:"IsSignedIn",
+		success:function(isLogged){
+			if(isLogged.trim() === "yes"){
+				console.log("show");
+				$('#username').show();
+				$('#signin').hide();
+			}
+			else{
+			console.log("hide");
+				$('#username').hide();
+				$('#logout').hide();
+
+			}
+		}
+	});
 	append_head='\
-				<span><strong class="text-left shipping" style="font-size:40px;padding-top:20px;">Shopping Bee</strong>';
+				<span><p class="text-left shipping" style="font-size:40px;">Shopping Bee</p>';
 	$('#header').append(append_head);
 	
 	append_foot='\

@@ -14,10 +14,10 @@
 	<div class="head">
         <div id="header" class=" text-primary ">
          <div class="rightitems" >
-          <span ><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px"> Welcome <%= session.getAttribute("name")%></p></span>
-          <span><a href='mycart.jsp' style="font-size:14px;color:#09353A"><span class="glyphicon glyphicon-shopping-cart" style="padding-top:15px">Mycart</span></a></span>
-		<span><a href='LogoutServlet' style="padding-top:15px;font-size:14px;color:#E11F2A"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
-       
+          <span ><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px"> Welcome <span id="username"><%= session.getAttribute("name")%></p></span>
+          <span><a href='mycart.jsp' id="mycart"><span class="glyphicon glyphicon-shopping-cart">Mycart</span></a></span>
+		<span><a href='LogoutServlet' id="logout"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
+       <span><a href='signup.jsp'  id="signin"><span class="glyphicon glyphicon-user">SignUp/Login</span></a></span>
        </div>
        </div>
        </div>
@@ -52,7 +52,7 @@
                 <div class="container">       
                     <div class="navbar-header">
                             <div class="navbar-brand" id="more-filter-btn">
-                                <span class="shopBy">Filter </span>
+                                <span class="shopBy">Sports </span>
                             </div>
                     </div>
                 </div> 
@@ -66,22 +66,24 @@
                            
                         </table>
                     </div>
-                    <span class="btn pull-right" id="reset-btn">Reset <span class="glyphicon glyphicon-repeat"></span> </span>
+                    
                 </div>
             </div>
         </div>
         <div class="row" style="margin:0px">
-            <div class="col-xs-12 col-sm-4 col-md-2" >
-                <div class="filter-area">
-                    <span class="filter-span"></span>
+            <div class="col-xs-2 " >
+                <div id="filter-area">
+                    
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-10">
+            <div class="col-xs-10 ">
                 <div class="catlogitems ">
                 </div>
             </div>
         </div>
-        <div id="footer"></div>
+        <hr>
+         <div class="container">
+        <div id="footer" ></div></div>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         
        <script type="text/javascript" src="js/sports.js"></script>

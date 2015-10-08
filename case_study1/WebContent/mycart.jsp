@@ -7,7 +7,7 @@
 <head>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
  <link rel="stylesheet" type="text/css" href="css/common.css">
- <link rel="stylesheet" type="text/css" href="css/myscript.css">
+ <link rel="stylesheet" type="text/css" href="css/mycart.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Mycart</title>
 </head>
@@ -15,7 +15,15 @@
 
 <% Connection conn =  DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123"); %>
 
-<% String query = "select * from addtocart"; 
+<%String isLogged = (String) session.getAttribute("islogged");
+String username;
+if(isLogged=="yes"){
+	username=(String) session.getAttribute("name");
+}
+else
+	username="nouser";
+
+String query = "select * from addtocart where username='"+username+"'"; 
  Statement statement = (Statement) conn.createStatement();
  
  
@@ -25,10 +33,12 @@
  <div class="container ">
 <div class="head">
         <div id="header" class=" text-primary ">
-         <strong class="text-left shipping" style="font-size:40px;">Shopping Bee</strong>
+        
          <div class="rightitems" >
-          <span style="display:block;"><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px;"> Welcome <%= session.getAttribute("name")%></p></span>
-		<span style="display:block;"><a href='LogoutServlet' style="padding-top:15px;font-size:14px;color:#E11F2A"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
+          <span ><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px"> Welcome <span id="username"><%= session.getAttribute("name")%></p></span>
+          <span><a href='mycart.jsp' id="mycart"><span class="glyphicon glyphicon-shopping-cart">Mycart</span></a></span>
+		<span><a href='LogoutServlet' id="logout"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
+       <span><a href='signup.jsp'  id="signin"><span class="glyphicon glyphicon-user">SignUp/Login</span></a></span>
        </div>
        </div>
        </div>
@@ -74,9 +84,9 @@
         			<td><%= rs.getString("productname") %></td>
         			<td><%= rs.getString("productprice") %> </td>
         			<td style="width:10%;"><input type="number" class="forfocus" id="<%= rs.getString("productname") %>" style="width:50%;" name="quantity" value="<%= rs.getInt("quantity") %>"></td>
-        			<td>
+        			<td >
         			
-        			<span class="glyphicon glyphicon-remove-circle forremove" id="<%= rs.getString("productname") %>">
+        			<span class="glyphicon glyphicon-trash forremove"  id="<%= rs.getString("productname") %>">
         			</span></td>
         			
         		</tr>
@@ -87,5 +97,6 @@
         </div>
          <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <script src="js/mycart.js"></script>
+        <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

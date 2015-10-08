@@ -5,11 +5,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpSession;
+
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.Statement;
 
 public class CartTable {
- public static void addtocarttable(String key){
+ public static void addtocarttable(String key,String username){
 	 try{
 		 
 	 
@@ -29,14 +31,17 @@ public class CartTable {
 			image=rs.getString("image");			
 			price=rs.getString("price");
 		}
-		String query2 ="insert into addtocart(productname,productimage,productprice,quantity,category_id) values(?,?,?,?,?)" ;
+		
+		
+		String query2 ="insert into addtocart(productname,productimage,productprice,quantity,username,category_id) values(?,?,?,?,?,?)" ;
 		PreparedStatement statement2 = (PreparedStatement) conn.prepareStatement(query2);
 //		ResultSet rs2 =  statement2.executeQuery();		 
 		 statement2.setString(1, key);
 		 statement2.setString(2, image);		 
 		 statement2.setString(3, price);		 
 		 statement2.setInt(4, 1);
-		 statement2.setInt(5, 2);		 
+		 statement2.setString(5, username);
+		 statement2.setInt(6, 2);		 
 		 statement2.execute();	
 	 }
 	 catch(ClassNotFoundException | SQLException e){

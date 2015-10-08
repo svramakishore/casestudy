@@ -95,3 +95,18 @@
 	width:100%;
 	margin-top:20px;
 }
+#logout{
+	padding-top:15px;
+	font-size:14px;
+	color:#E11F2A;
+}
+#signin{
+	padding-top:15px;
+	font-size:14px;
+	color:#E11F2A;
+}
+#mycart{
+	font-size:14px;
+	color:#09353A;
+	padding-top:15px;
+}

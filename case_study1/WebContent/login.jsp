@@ -28,12 +28,13 @@
 		    <div><p style="color:red">${errormessage}</p></div>
 		    <button type="submit" class="btn btn-primary">Submit</button>
 		     
-		<button class="btn btn-primary" style="margin-left:50%;" > <a href="signup.jsp" style="color:white;"> New User</a></button>
+		<div class="btn btn-primary" style="margin-left:50%;" id="newuser" >  New User</div>
 		  
 		  </form>
 		 
 	  </div>
 </div>
-
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/login.js"></script>
 </body>
 </html>

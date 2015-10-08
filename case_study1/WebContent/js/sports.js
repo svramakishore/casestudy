@@ -45,21 +45,21 @@ var sport_filters={
     }
 $(document).ready(function() {
 	$.getJSON("Sports",function(sport_list){
-    $("#filters-table-1").append('<tr id="filter-categories-1"></tr>'); // creating a row for table-1 to 4
+		$("#filters-table-1").append('<tr id="filter-categories-1"></tr>'); // creating a row for table-1 to 4
         // creating a row for filter options
-    for(var key in sport_filters){
-        sportfilters_array=sport_filters[key];
-        $("#filter-categories-1").append('<th  id="'+key+'"><span class="text-primary " style="margin-left:25%">'+key+'</span><td></th>');
-        for(var i=0;i<sportfilters_array.length;i++){
-            $("#"+key).append('<div class="checkbox" style="left:25%"><label  id="label_'+key+"_"+sportfilters_array[i]+'" style="margin-left: 0px;"><input \
-                        type="checkbox" id='+key+"_"+sportfilters_array[i]+' value="">'+sportfilters_array[i]+'</label></div>');
-        }
-        $("#"+key).append("</td>");
-    }
+                                                                             // for table -1 to 4
+		for(var key in sport_filters){
+			  sport_filters_array=sport_filters[key];
+			   $("#filter-area").append('<table id="'+key+'" class="forfilter"><tr><th  ><span class="text-primary " style="margin-left:25%">'+key+'</span></th></tr>');
+			   
+			   for(var i=0;i<sport_filters_array.length;i++){
+			       $("#"+key).append('<tr><td><div class=" checkbox"><label id="label_'+key+"_"+sport_filters_array[i]+'" style="margin-left:25%"><input \
+			                   type="checkbox" id='+key+"_"+sport_filters_array[i]+' value="">'+sport_filters_array[i]+'</label></div></td></tr>');
+			   }
+			   $("#"+key).append("</table>");
+			}
 
-    $("#more-filter-btn").click(function(){
-        $("#more-filters-list2").slideToggle("fast");
-    });
+   
 
     var ab=0;
     old_cat_title = [];

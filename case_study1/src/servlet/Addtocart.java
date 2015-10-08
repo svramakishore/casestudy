@@ -36,10 +36,11 @@ public class Addtocart extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 try {
-		HttpSession sessionnew = request.getSession();
-		String id= (String) sessionnew.getAttribute("id");
+		HttpSession session = request.getSession();
+		String id= (String) session.getAttribute("id");
 		String key=id.substring(0, id.length()-1);
-		System.out.println(key);
+		String isLogged = (String) session.getAttribute("islogged");
+		
 		 Class.forName("com.mysql.jdbc.Driver");
 		
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123");
@@ -50,7 +51,12 @@ public class Addtocart extends HttpServlet {
 			ResultSet rs= statement.executeQuery();
 			int i=1;
 			boolean ispresent=false;
-			
+			String username;
+			if(isLogged=="yes"){
+				username=(String) session.getAttribute("name");
+			}
+			else
+				username="nouser";
 			while(rs.next()){
 				ispresent=true;
 				int quantity = rs.getInt("quantity");
@@ -64,7 +70,7 @@ public class Addtocart extends HttpServlet {
 			}
 			if(!ispresent){
 				
-			CartTable.addtocarttable(id);
+			CartTable.addtocarttable(id,username);
 				
 			}
 			response.sendRedirect("mycart.jsp");

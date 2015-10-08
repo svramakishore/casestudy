@@ -19,3 +19,6 @@ body{
 .form-group{
 	width:70%;
 }
+#login{
+	float:right;
+}
