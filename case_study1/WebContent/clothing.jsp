@@ -51,31 +51,21 @@
             <div class="shopByBar">
                 <div class="container">       
                     <div class="navbar-header">
-                            <div class="navbar-brand" id="more-filter-btn">
-                                <span class="shopBy">Filter</span>
+                            <div class="navbar-brand" >
+                                <span class="shopBy">Clothing</span>
                             </div>
                     </div>
                 </div> 
             </div>
        </nav>
-       <div class="pos-absolute container-fluid filter-style" id="more-filters-list2" >
-            <div  id="more-filters-container">  
-                <div class="row basic-filters">
-                    <div class="col-sm-12" style="padding:5px;">
-                        <table id = "filters-table-1" style="width:100%; table-layout:fixed;">
-                        </table>
-                    </div>
-                    <span class="btn pull-right" id="reset-btn">Reset <span class="glyphicon glyphicon-repeat"></span> </span>
+      
+         <div class="row" style="margin:0px">
+            <div class="col-xs-2 " >
+                 <div id="filter-area">
+                    
                 </div>
             </div>
-        </div>
-        <div class="row" style="margin:0px">
-            <div class="col-xs-12 col-sm-4 col-md-2" >
-                <div class="filter-area">
-                    <span class="filter-span"></span>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-8 col-md-10">
+            <div class="col-xs-10 ">
                 <div class="catlogitems ">
                 </div>
             </div>

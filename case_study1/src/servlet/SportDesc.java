@@ -36,8 +36,10 @@ public class SportDesc extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try{
+			
 			Class.forName("com.mysql.jdbc.Driver");
 			String key = request.getParameter("id");
+			
 			 Connection conn =  (Connection) DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123"); 
 			 String query = "select * from sport where productkey=?"; 
 			 PreparedStatement statement = (PreparedStatement) conn.prepareStatement(query);

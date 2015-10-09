@@ -233,16 +233,7 @@ $('.checkbox').change(function() {
        }
    }
 });
-$('#reset-btn').click(function(){
-   $('.filter-span').empty();
-   $('#more-filters-container').find('input').attr('checked', false);
-   old_cat_title=[];
-   for(var key in book_list){
-       var book_list_array=book_list[key];
-       $('.'+book_list_array["price"]+'_'+book_list_array["pages"]).show();
-   }
-   ab=0;
-});
+
 $('body').click(function(evt){    
   if((evt.target.class == "shopByBar")||(evt.target.id== 'more-filters-container')||(evt.target.class == "filter-close"))
      return;

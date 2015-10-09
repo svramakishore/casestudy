@@ -1,12 +1,12 @@
 <%@ page import="java.sql.*" %>
-<% Class.forName("com.mysql.jdbc.Driver"); %>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cart Book</title>
+<title> cloth Description</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
        
         <link rel="stylesheet" type="text/css" href="css/cartcloth.css">
@@ -14,15 +14,7 @@
         <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <body>
-<% String key = request.getParameter("id"); %>
-<% Connection conn =  DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123"); %>
 
-<% String query = "select * from cloth where productkey=?"; 
- PreparedStatement statement = conn.prepareStatement(query);
- statement.setString(1,key);
- statement.execute();
- ResultSet rs = statement.executeQuery();
- %>
 <div class="container ">
 	<div class="head">
         <div id="header" class=" text-primary ">
@@ -36,18 +28,42 @@
        </div>
        </div>
      </div>
-
+	 <nav class="navbar navbar-inverse">
+         <div class="container">
+            <div class="container-fluid ">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar" style="background-color:#337ab7"></span>
+                        <span class="icon-bar" style="background-color:#337ab7"></span>
+                        <span class="icon-bar" style="background-color:#337ab7"></span> 
+                    </button>
+                    <a class="navbar-brand active " href="home.jsp" style="padding-bottom:20px;color:white">Home</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav nav-pills nav-justified">
+						 
+						 <li><a href="electronics.jsp" style="padding-bottom:20px;" class="nav-li">Electronics</a></li>
+						 <li ><a href="books.jsp" style="padding-bottom:20px;" class="nav-li">Books</a></li>
+						 <li ><a href="sports.jsp" style="padding-bottom:20px;" class="nav-li">Sports</a></li>
+						 <li class="active"><a href="clothing.jsp" style="padding-bottom:20px;" class="nav-li">Clothing</a></li>
+					</ul>
+                   
+                </div>
+            </div>
+            </div>
+        </nav>
+        
 <div class="container button">
             <div class="text-danger text-center">
-                <h2>More Description</h2>
+                
             </div> 
             <div class="row">
                 <div class="col-xs-12 col-sm-6  mybody-image">
-                <% while (rs.next()) { %>
-                <img src="<%= rs.getString("image") %> " style="width: 300px; height: 550px;" class="img-thumbnail">
+               
+                <img src="<%= session.getAttribute("image")  %>" style="width: 300px; height: 550px;" class="img-thumbnail">
                 </div>
                 <div class="col-xs-12 col-md-6 mybody-matter" >
-	                <h2><%= rs.getString("cloth") %></h2>
+	                <h2><%= session.getAttribute("cloth") %></h2>
 	                <ul style="list-style-type:none"><li style="display:inline"><span class="glyphicon glyphicon-pencil">Write a review</span></li>
 	                <li style="display:inline;padding-left:20px;"><span class="glyphicon glyphicon-heart">Add to WishList</span></li></ul>
 	                <div class="for_availability" >
@@ -64,13 +80,13 @@
 	                
 	                <div class="row">
 	                <div class="col-xs-6">
-		                <h4>Rs:<%= rs.getString("price") %></h4>
-		                <h4>Brand=<%= rs.getString("brand") %></h4>
+		                <h4>Rs:<%= session.getAttribute("price")%></h4>
+		                <h4>Brand=<%= session.getAttribute("brand") %></h4>
+		                <h4>Type=<%= session.getAttribute("type") %></h4>
 		               
 	              <form action="Addtocart" method="GET">
 	               <input class="btn" type="submit" name="addtocart" style="margin-bottom:7px;background:#f78828;padding:6px 35px" value="ADD TO CART"><br />
-	                <% 
-	                session.setAttribute("id",key);%>
+	               
 	                <button class="btn  " type="button" style="background:#5b992b;padding:6px 50px"">BUY NOW</button>
             
 	                </div>
@@ -87,23 +103,15 @@
                 
                 </div>
                 
-                <% } %>
             </div>
         
 
-            
-               <div class="container">
-	        <div id="footer">
-	        <table style="width:100%"><tr><td>HELP</td><td>SHIPPING</td><td>EBOOKS</td><td>MISC</td></tr>
-		<tr><td>payments</td><td>contacts</td><td>ebook quick start quide</td><td>online shoping</td></tr>
-		<tr><td>saved cards</td><td>About us</td><td>ebooks FAQ</td><td>Affilate</td></tr>
-		<tr><td>shipping</td><td>Carrers</td><td>ebook App</td><td>Gift card</td></tr>
-		<tr><td>Cancellation and returns</td><td>Slash n</td><td>ebook Learning FAQ</td><td>Press</td></tr></table>
-		<div class="lasfoot" style="display:inline"><div style="padding-top:15px"><span><span>Policies:</span> Terms of use | Security | Privacy |Infringement</span></div>
-		<div style="float:right"><strong>Keep In Toch</strong><a target="_blank" href="www.facebook.com" style="background-image: url()"></a></div></div>
-	        </div>
-        </div>
-        </div>
-        <script type="text/javascript" src="js/common.js"></script>
+              <hr>
+       <div class="container">
+        <div id="footer" ></div></div>
+	 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
+      
+      <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

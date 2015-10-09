@@ -40,8 +40,8 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav nav-pills nav-justified">
 						 
-						 <li><a href="electronics.jsp" style="padding-bottom:20px;" class="nav-li">Electronics</a></li>
-						 <li class="active"><a href="books.jsp" style="padding-bottom:20px;" class="nav-li">Books</a></li>
+						 <li class="active"><a href="electronics.jsp" style="padding-bottom:20px;" class="nav-li">Electronics</a></li>
+						 <li ><a href="books.jsp" style="padding-bottom:20px;" class="nav-li">Books</a></li>
 						 <li ><a href="sports.jsp" style="padding-bottom:20px;" class="nav-li">Sports</a></li>
 						 <li><a href="clothing.jsp" style="padding-bottom:20px;" class="nav-li">Clothing</a></li>
 					</ul>
@@ -118,16 +118,12 @@
         </div>
             
         </div>
-        <div class="container">
-	        <div id="footer2">
-	        <table style="width:100%"><tr><td>HELP</td><td>SHIPPING</td><td>EBOOKS</td><td>MISC</td></tr>
-		<tr><td>payments</td><td>contacts</td><td>ebook quick start quide</td><td>online shoping</td></tr>
-		<tr><td>saved cards</td><td>About us</td><td>ebooks FAQ</td><td>Affilate</td></tr>
-		<tr><td>shipping</td><td>Carrers</td><td>ebook App</td><td>Gift card</td></tr>
-		<tr><td>Cancellation and returns</td><td>Slash n</td><td>ebook Learning FAQ</td><td>Press</td></tr></table>
-		<div class="lasfoot" style="display:inline"><div style="padding-top:15px"><span><span>Policies:</span> Terms of use | Security | Privacy |Infringement</span></div>
-		<div style="float:right"><strong>Keep In Toch</strong><a target="_blank" href="www.facebook.com" style="background-image: url()"></a></div></div>
-	        </div>
-        </div>
+         <hr>
+       <div class="container">
+        <div id="footer" ></div></div>
+	 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        
+      
+      <script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

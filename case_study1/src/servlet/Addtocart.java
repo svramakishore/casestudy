@@ -36,38 +36,46 @@ public class Addtocart extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		 try {
+			 
 		HttpSession session = request.getSession();
-		String id= (String) session.getAttribute("id");
+		String id= (String) session.getAttribute("key");
+		System.out.println(id);
 		String key=id.substring(0, id.length()-1);
+		
 		String isLogged = (String) session.getAttribute("islogged");
 		
 		 Class.forName("com.mysql.jdbc.Driver");
 		
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123");
-		
-			String query = ("select * from addtocart where productname=?");
-			PreparedStatement statement = (PreparedStatement) conn.prepareStatement(query);
-			statement.setString(1, id);
-			ResultSet rs= statement.executeQuery();
-			int i=1;
-			boolean ispresent=false;
+			
 			String username;
 			if(isLogged=="yes"){
 				username=(String) session.getAttribute("name");
 			}
 			else
 				username="nouser";
+			String query = ("select * from addtocart where productname=? and username=?");
+			PreparedStatement statement = (PreparedStatement) conn.prepareStatement(query);
+			statement.setString(1, id);
+			statement.setString(2,username );
+			ResultSet rs= statement.executeQuery();
+			int i=1;
+			boolean ispresent=false;
+			
 			while(rs.next()){
+				
 				ispresent=true;
 				int quantity = rs.getInt("quantity");
 				quantity=quantity+1;
-				query = ("update addtocart set quantity = ? where productname=?");
+				query = ("update addtocart set quantity = ? where productname=? and username=?");
 				statement=(PreparedStatement) conn.prepareStatement(query);
 				statement.setInt(1,quantity);
 				statement.setString(2, id);
+				statement.setString(3, username);
 				int rs2=statement.executeUpdate();
 				
 			}
+			
 			if(!ispresent){
 				
 			CartTable.addtocarttable(id,username);

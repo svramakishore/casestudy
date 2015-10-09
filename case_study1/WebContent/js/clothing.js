@@ -51,19 +51,20 @@ var cloth_filters={
 
 $(document).ready(function() {
 	$.getJSON("cloth",function(cloth_list){
-		$("#filters-table-1").append('<tr id="filter-categories-1"></tr>');
+		$("#filters-table-1").append('<tr id="filter-categories-1"></tr>'); // creating a row for table-1 to 4
+        // creating a row for filter options
+                                                                             // for table -1 to 4
 		for(var key in cloth_filters){
-	       clothfilters_array=cloth_filters[key];
-	        $("#filter-categories-1").append('<th  id="'+key+'"><span class="text-primary " style="margin-left:25%">'+key+'</span><td></th>');
-	        for(var i=0;i<clothfilters_array.length;i++){
-	            $("#"+key).append('<div class="checkbox" style="left:25%"><label id="label_'+key+'_'+clothfilters_array[i]+'" style="margin-left: 0px;"><input \
-	                type="checkbox" id='+key+"_"+clothfilters_array[i]+' value="">'+clothfilters_array[i]+'</label></div>');
-	        }
-	        $("#"+key).append("</td>");
-	    }
-	    $("#more-filter-btn").click(function(){
-	        $("#more-filters-list2").slideToggle("fast");
-	    });
+			  cloth_filters_array=cloth_filters[key];
+			   $("#filter-area").append('<table id="'+key+'" class="forfilter"><tr><th  ><span class="text-primary " style="margin-left:25%">'+key+'</span></th></tr>');
+			   
+			   for(var i=0;i<cloth_filters_array.length;i++){
+			       $("#"+key).append('<tr><td><div class=" checkbox"><label id="label_'+key+"_"+cloth_filters_array[i]+'" style="margin-left:25%"><input \
+			                   type="checkbox" id='+key+"_"+cloth_filters_array[i]+' value="">'+cloth_filters_array[i]+'</label></div></td></tr>');
+			   }
+			   $("#"+key).append("</table>");
+			}
+	   
 	    var ab=0;
 	    old_cat_title = [];
 	    $('.checkbox').change(function(){
@@ -242,8 +243,8 @@ $(document).ready(function() {
 	        to_append +='\
 	        <div class="'+cloth_list_array["price"]+'_'+cloth_list_array["type"]+'">\
 	        <div class="'+cloth_list_array["type"]+'">\
-	            <div class="col-xs-12 col-sm-6 col-md-4  bookimage">\
-	            <div class="text-center"><a href="clothcart.jsp?id='+key+'"><img src="'+cloth_list_array["image"]+'" class="'+cloth_list_array["image"]+' img-thumbnail" style="width: 180px; height: 320px;"></a></div>\
+	            <div class="col-xs-12 col-sm-6 col-md-4  clothimage">\
+	            <div class="text-center"><a href="ClothDesc?id='+key+'"><img src="'+cloth_list_array["image"]+'" class="'+cloth_list_array["image"]+' img-thumbnail" style="width: 180px; height: 320px;"></a></div>\
 	            <div class="text-center"><p><strong>'+cloth_list_array["brand"]+'</strong></p></div>\
 	            <div class="text-primary text-center"><p>Price :'+cloth_list_array["price"]+'</p></div>\
 	            </div>\

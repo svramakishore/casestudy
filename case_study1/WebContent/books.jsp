@@ -59,17 +59,7 @@
                 </div> 
             </div>
        </nav>
-       <div class="pos-absolute container-fluid filter-style" id="more-filters-list2" >
-            <div  id="more-filters-container">  
-                <div class="row basic-filters">
-                    <div class="col-sm-12" style="padding:5px;">
-                        <table id = "filters-table-1" style="width:100%; table-layout:fixed;">
-                        </table>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
+      
 
         <div class="row" style="margin:0px">
             <div class="col-xs-2 " >

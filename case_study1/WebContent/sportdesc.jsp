@@ -40,9 +40,9 @@
                     <ul class="nav nav-pills nav-justified">
 						 
 						 <li><a href="electronics.jsp" style="padding-bottom:20px;" class="nav-li">Electronics</a></li>
-						 <li class="active"><a href="books.jsp" style="padding-bottom:20px;" class="nav-li">Books</a></li>
+						 <li ><a href="books.jsp" style="padding-bottom:20px;" class="nav-li">Books</a></li>
 						 <li ><a href="sports.jsp" style="padding-bottom:20px;" class="nav-li">Sports</a></li>
-						 <li><a href="clothing.jsp" style="padding-bottom:20px;" class="nav-li">Clothing</a></li>
+						 <li class="active"><a href="clothing.jsp" style="padding-bottom:20px;" class="nav-li">Clothing</a></li>
 					</ul>
                    
                 </div>
@@ -82,8 +82,7 @@
 		                
 		               <form action="Addtocart" method="GET">
 	               <input class="btn" type="submit" name="addtocart" style="margin-bottom:7px;background:#f78828;padding:6px 35px" value="ADD TO CART"><br />
-	                <% 
-	                session.setAttribute("id",session.getAttribute("key"));%>
+	                
 	                <button class="btn" type="button" name="buy" style="background:#5b992b;padding:6px 50px"">BUY NOW</button>
             		</form>
 	                </div>

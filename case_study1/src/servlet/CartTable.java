@@ -19,7 +19,8 @@ public class CartTable {
 	 System.out.println(key2);
 	 Class.forName("com.mysql.jdbc.Driver");
 	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123");
-		String query = ("select * from "+key2+" where productkey='"+key+"'");
+	 	
+	 String query = ("select * from "+key2+" where productkey='"+key+"'");
 		
 		Statement statement =  (Statement) conn.createStatement();
 		
