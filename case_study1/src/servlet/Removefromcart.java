@@ -38,7 +38,7 @@ public class Removefromcart extends HttpServlet {
 		 HttpSession session = request.getSession();
 		 Class.forName("com.mysql.jdbc.Driver");
 		 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/dataweb","root","beehyv123");
-			System.out.println(request.getParameter("remove"));
+			
 		 String query = "delete from addtocart where productname='"+request.getParameter("remove")+"'";
 			
 			Statement statement =  (Statement) conn.createStatement();

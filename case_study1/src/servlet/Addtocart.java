@@ -39,7 +39,7 @@ public class Addtocart extends HttpServlet {
 			 
 		HttpSession session = request.getSession();
 		String id= (String) session.getAttribute("key");
-		System.out.println(id);
+		
 		String key=id.substring(0, id.length()-1);
 		
 		String isLogged = (String) session.getAttribute("islogged");

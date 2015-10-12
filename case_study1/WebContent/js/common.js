@@ -15,6 +15,13 @@ $(document).ready(function(){
 			}
 		}
 	});
+	$.ajax({
+		url:"MycartQuantity",
+		success:function(totalquantity){
+			
+			$("#mycart").append("<span class='badge'>"+totalquantity+"</span>");
+		}
+	});
 	append_head='\
 				<span><p class="text-left shipping" style="font-size:40px;">Shopping Bee</p>';
 	$('#header').append(append_head);
