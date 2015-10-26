@@ -44,7 +44,11 @@ var sport_filters={
         "clicked":[],
     }
 $(document).ready(function() {
-	$.getJSON("Sports",function(sport_list){
+	$.ajax({
+		url:"/case_study1/sports.do",
+		type:"get",
+		 dataType: 'json',
+		success:function(sport_list){
 		$("#filters-table-1").append('<tr id="filter-categories-1"></tr>'); // creating a row for table-1 to 4
         // creating a row for filter options
                                                                              // for table -1 to 4
@@ -286,7 +290,7 @@ $(document).ready(function() {
         <div class="'+sport_list_array["price"]+'_'+sport_list_array["sportname"]+'">\
         <div class="'+sport_list_array["sportname"]+'">\
             <div class="col-xs-12 col-sm-6 col-md-4  bookimage">\
-            <div class="text-center"><a href="SportDesc?id='+key+'"><img src="'+sport_list_array["image"]+'" class="'+sport_list_array["image"]+' img-thumbnail" style="width: 215px; height: 215px;"></a></div>\
+            <div class="text-center"><a href="sportDesc.do?id='+key+'"><img src="'+sport_list_array["image"]+'" class="'+sport_list_array["image"]+' img-thumbnail" style="width: 215px; height: 215px;"></a></div>\
             <div class="text-center"><p><strong>'+sport_list_array["sportname"]+'</strong></p></div>\
             <div class="text-primary text-center"><p>Price :'+sport_list_array["price"]+'</p></div>\
             </div>\
@@ -294,5 +298,6 @@ $(document).ready(function() {
             </div>';
     }
     $(".catlogitems").append(to_append);
+		}
 	});
 });

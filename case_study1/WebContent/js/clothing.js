@@ -50,7 +50,11 @@ var cloth_filters={
 }
 
 $(document).ready(function() {
-	$.getJSON("cloth",function(cloth_list){
+	$.ajax({
+		url:"/case_study1/cloth.do",
+		type:"get",
+		 dataType: 'json',
+		success:function(cloth_list){
 		$("#filters-table-1").append('<tr id="filter-categories-1"></tr>'); // creating a row for table-1 to 4
         // creating a row for filter options
                                                                              // for table -1 to 4
@@ -244,7 +248,7 @@ $(document).ready(function() {
 	        <div class="'+cloth_list_array["price"]+'_'+cloth_list_array["type"]+'">\
 	        <div class="'+cloth_list_array["type"]+'">\
 	            <div class="col-xs-12 col-sm-6 col-md-4  clothimage">\
-	            <div class="text-center"><a href="ClothDesc?id='+key+'"><img src="'+cloth_list_array["image"]+'" class="'+cloth_list_array["image"]+' img-thumbnail" style="width: 180px; height: 320px;"></a></div>\
+	            <div class="text-center"><a href="clothDesc.do?id='+key+'"><img src="'+cloth_list_array["image"]+'" class="'+cloth_list_array["image"]+' img-thumbnail" style="width: 180px; height: 320px;"></a></div>\
 	            <div class="text-center"><p><strong>'+cloth_list_array["brand"]+'</strong></p></div>\
 	            <div class="text-primary text-center"><p>Price :'+cloth_list_array["price"]+'</p></div>\
 	            </div>\
@@ -252,6 +256,7 @@ $(document).ready(function() {
 	            </div>';
 	    }
 	    $(".catlogitems").append(to_append);
+		}
 	});
 	
 });

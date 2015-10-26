@@ -18,7 +18,7 @@ import com.mysql.jdbc.PreparedStatement;
 /**
  * Servlet implementation class BookDesc
  */
-@WebServlet("/BookDesc")
+//@WebServlet("/BookDesc")
 public class BookDesc extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

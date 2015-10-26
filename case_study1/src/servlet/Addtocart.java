@@ -18,7 +18,7 @@ import com.mysql.jdbc.PreparedStatement;
 /**
  * Servlet implementation class Addtocart
  */
-@WebServlet("/Addtocart")
+//@WebServlet("/Addtocart")
 public class Addtocart extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

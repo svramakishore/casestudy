@@ -4,16 +4,22 @@ import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
-@WebServlet("/Login")
+
+//@WebServlet("/login")
+@Controller
 public class Login extends HttpServlet {
  
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	

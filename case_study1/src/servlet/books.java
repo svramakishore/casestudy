@@ -24,7 +24,7 @@ import com.mysql.jdbc.ResultSetMetaData;
 /**
  * Servlet implementation class books
  */
-@WebServlet("/books")
+//@WebServlet("/books")
 public class books extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

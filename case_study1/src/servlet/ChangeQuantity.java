@@ -17,7 +17,7 @@ import com.mysql.jdbc.PreparedStatement;
 /**
  * Servlet implementation class ChangeQuantity
  */
-@WebServlet("/ChangeQuantity")
+//@WebServlet("/ChangeQuantity")
 public class ChangeQuantity extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

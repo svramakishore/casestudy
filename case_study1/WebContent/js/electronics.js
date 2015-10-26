@@ -284,7 +284,11 @@ $(document).ready(function() {
     //for appending objects keys and values into filters    
 	$(document).ready(function() {
 
-		$.getJSON("Electronics",function(electronics_list){
+		$.ajax({
+			url:"/case_study1/electronics.do",
+			type:"get",
+			 dataType: 'json',
+			success:function(electronics_list){
 		
 			$("#filters-table-1").append('<tr id="filter-categories-1"></tr>'); // creating a row for table-1 to 4
 	        // creating a row for filter options
@@ -469,7 +473,7 @@ $(document).ready(function() {
 	 <div class="'+electronics_list_array["weight"]+'_'+electronics_list_array["brand"]+'">\
 	 <div class="'+electronics_list_array["displaybleName"]+'">\
 	           <div class="col-xs-12 col-sm-6 col-md-4 bookimage" style="padding:0px;">\
-	           <div class="text-center" ><a href="ElectonicDesc?id='+key+'"><img src="'+electronics_list_array["image"]+'" class="'+electronics_list_array["image"]+' img-thumbnail" style="width: 250px; height: 245px;"></a></div>\
+	           <div class="text-center" ><a href="/case_study1/electronicDesc.do?id='+key+'"><img src="'+electronics_list_array["image"]+'" class="'+electronics_list_array["image"]+' img-thumbnail" style="width: 250px; height: 245px;"></a></div>\
 	           <div class="text-center" ><p><strong>'+electronics_list_array["displaybleName"]+'</strong></p></div>\
 	           <div class="text-primary"><p><span class="text-left" style="padding-left:25%;">weight :'+electronics_list_array["weight"]+'</span><span class="text-right" style="padding-left:8%">Hard Disc :'+electronics_list_array["hard_disc"]+'</span></div>\
 	           </div>\
@@ -479,9 +483,7 @@ $(document).ready(function() {
 	
 	$(".catlogitems").append(to_append);
 	
-	for(var key in electronics_filters){
-		
-	}
+			}
 		} );
 	});
 	})

@@ -24,7 +24,7 @@ import com.mysql.jdbc.ResultSetMetaData;
 /**
  * Servlet implementation class cart
  */
-@WebServlet("/cloth")
+//@WebServlet("/cloth")
 public class cloth extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
