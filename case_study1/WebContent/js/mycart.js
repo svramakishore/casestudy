@@ -6,17 +6,21 @@ $(document).ready(function(){
 			quantityfunction(totalquantity);
 		}
 	});
+	
 	function quantityfunction(totalquantity){
 		$("#mycartvalue").html("<span class='badge'>"+totalquantity+"</span>");
 		if(totalquantity==0){
 			$(".carttable").html("<p style='font-size:35px;border:1px solid black' class='text-center'>No Products Available</p>");
 		}
 	}
+
+	var total=0;
 	$.ajax({
 		url:"productprice.do",
 		success:function(product){
 			var toappend="";
 			for(var i=0;i<product.length;i++){	
+				total=total+product[i]['subtotal'];
 			toappend +="<tr style='margin-bottom:10px' class='"+product[i]['productname']+"'>\
         			<td><img src='"+product[i]['productimage']+"' style='width:150px;height:150px'></td>\
         			<td>"+product[i]['productprice']+"</td>\
@@ -27,7 +31,11 @@ $(document).ready(function(){
         			</span></td>\
                		</tr>"
 			}
+			toappend+="<tr style='margin-bottom:10px' >\
+					<td colspan='3' style='float:right;'>Total</td><td colspan='2' id='totalamount'>"+total+"</td></tr>"
+			
 			$('.mycarttable').append(toappend);
+			
 			$('.forfocus').change(function(){
 				var value=$(this).val();
 				var idnew=$(this).attr('id');
@@ -48,6 +56,13 @@ $(document).ready(function(){
 						quantityfunction(totalquantity);
 					}
 				});
+				$.ajax({
+					url:"totalAmount.do",
+					success:function(totalammount){
+						console.log(totalammount);
+						$("#totalamount").text(totalammount);
+					}
+				});
 			});			
 			$('.forremove').click(function(){	
 				var id=$(this).attr('id');
@@ -63,10 +78,13 @@ $(document).ready(function(){
 				$.ajax({
 					url:"myCartquantity.do",
 					success:function(totalquantity){
-						$("#mycartvalue").html("<span class='badge'>"+totalquantity+"</span>");
-						if(totalquantity==0){							
-							$(".carttable").html("<p style='font-size:35px;border:1px solid black' class='text-center'>No Products Available</p>");
-						}
+						quantityfunction(totalquantity);
+					}
+				});
+				$.ajax({
+					url:"totalAmount.do",
+					success:function(totalammount){						
+						$("#totalamount").html(" "+totalammount+" ");
 					}
 				});
 				
