@@ -17,8 +17,14 @@ body{
 	background-repeat:no-repeat;
 }
 .form-group{
-	width:70%;
+	width:75%;
 }
 #login{
 	float:right;
 }
+#username,#cnfpass,#mobileno1,#mobileno2{
+	padding-top:5px;
+	display:none;
+	color:red;
+}
+

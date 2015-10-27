@@ -7,10 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title> cloth Description</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-       
-        <link rel="stylesheet" type="text/css" href="css/cartcloth.css">
-        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">       
         <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 <body>
@@ -22,7 +19,7 @@
          <div class="rightitems" >
           <span ><p style="color:rgb(28, 27, 59);padding:15px 0px 0px 0px"> Welcome <span id="username"><%= session.getAttribute("name")%></p></span>
           <span><a href='mycart.jsp' id="mycart" ><span class="glyphicon glyphicon-shopping-cart" >Mycart</span><span id="mycartvalue"></span></a></span>		<span><a href='logout.do' id="logout"><span class="glyphicon glyphicon-log-out">Logout</span></a></span>
-       <span><a href='signup.jsp'  id="signin"><span class="glyphicon glyphicon-user">SignUp/Login</span></a></span>
+       <span><a href='signup.do'  id="signin"><span class="glyphicon glyphicon-user">SignUp/Login</span></a></span>
        </div>
        </div>
        </div>

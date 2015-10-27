@@ -5,6 +5,7 @@ body{
 	
 }
 .login{
+	
 	border:1px solid black;
 	width: 63%;height: 342px;
 	padding-left: 73px;
@@ -12,6 +13,11 @@ body{
 	background-image:url("../images/loginback1.jpg");
 	background-size:cover;
 	background-repeat:no-repeat;
+}
+#forhomepage{
+	position:absolute;
+	top:20px;
+	right:20px;
 }
 .containers{
 	padding-top:200px;

@@ -1,4 +1,17 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+	
+	$.ajax({
+		url:"myCartquantity.do",
+		success:function(totalquantity){
+			quantityfunction(totalquantity);
+		}
+	});
+	function quantityfunction(totalquantity){
+		$("#mycartvalue").html("<span class='badge'>"+totalquantity+"</span>");
+		if(totalquantity==0){
+			$(".carttable").html("<p style='font-size:35px;border:1px solid black' class='text-center'>No Products Available</p>");
+		}
+	}
 	$.ajax({
 		url:"productprice.do",
 		success:function(product){
@@ -32,12 +45,13 @@ $(document).ready(function(){
 				$.ajax({
 					url:"myCartquantity.do",
 					success:function(totalquantity){
-						$("#mycartvalue").html("<span class='badge'>"+totalquantity+"</span>");
+						quantityfunction(totalquantity);
 					}
 				});
 			});			
-			$('.forremove').click(function(){				
+			$('.forremove').click(function(){	
 				var id=$(this).attr('id');
+				
 				$.ajax({
 					url:"removefromcart.do",
 					type:"get",
@@ -50,8 +64,14 @@ $(document).ready(function(){
 					url:"myCartquantity.do",
 					success:function(totalquantity){
 						$("#mycartvalue").html("<span class='badge'>"+totalquantity+"</span>");
+						if(totalquantity==0){							
+							$(".carttable").html("<p style='font-size:35px;border:1px solid black' class='text-center'>No Products Available</p>");
+						}
 					}
 				});
+				
+				
+				
 			});			
 		}
 	});	

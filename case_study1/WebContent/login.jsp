@@ -14,6 +14,7 @@
 <body>
 <%System.out.println(session.getAttribute("islogged"));if(session.getAttribute("islogged") != null) response.sendRedirect("home.jsp"); %>
 <div class="containers">
+<div class="btn btn-primary" style="float:right;"  id="forhomepage" > Go to Home</div>
 	<div class="login">
 		  <h2 >Login</h2>
 		  <form:form method="POST" action="/case_study1/checkuser.do">
@@ -32,7 +33,7 @@
 		    <div><p style="color:red">${errormessage}</p></div>
 		    <button type="submit" class="btn btn-primary">Submit</button>
 		     
-		<div class="btn btn-primary" style="margin-left:50%;" id="newuser" >  New User</div>
+			<div class="btn btn-primary" style="margin-left:50%;" id="newuser" >  New User</div>
 		  
 		  </form:form>
 		 

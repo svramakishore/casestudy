@@ -23,7 +23,7 @@ var electronics_filters = {
 //            
 //                {
 //                    "weight": "1kg",
-//                    "hard_disc":"500GB",
+//                    "harddisc":"500GB",
 //                    "ram":"2_GB",
 //                    "brand": "toshiba",
 //                    "grapic_card":"1GB",
@@ -39,7 +39,7 @@ var electronics_filters = {
 //               
 //                    {
 //                    "weight": "2kg",
-//                    "hard_disc":"750GB",
+//                    "harddisc":"750GB",
 //                    "ram":"4_GB","brand": "toshiba",
 //                    "grapic_card":"3GB",
 //                    "displaybleName": "Toshiba_750",
@@ -55,7 +55,7 @@ var electronics_filters = {
 //                {
 //                    
 //                    "weight": "3kg",
-//                    "hard_disc":"1TB",
+//                    "harddisc":"1TB",
 //                    "ram":"8_GB","brand": "toshiba",
 //                    "grapic_card":"3GB",
 //                    "displaybleName": "Toshiba_1000",
@@ -68,7 +68,7 @@ var electronics_filters = {
 //         "Lenovo1": 
 //                {
 //                    "weight": "1kg",
-//                    "hard_disc":"500GB",
+//                    "harddisc":"500GB",
 //                    "ram":"2_GB","brand": "lenovo",
 //                    "grapic_card":"1GB",
 //                    "displaybleName": "Lenovo_500",
@@ -84,7 +84,7 @@ var electronics_filters = {
 //                {
 //                    
 //                    "weight": "2kg",
-//                    "hard_disc":"750GB",
+//                    "harddisc":"750GB",
 //                    "ram":"4_GB","brand": "lenovo",
 //                    "grapic_card":"3GB",
 //                    "displaybleName": "Lenovo_750",
@@ -100,7 +100,7 @@ var electronics_filters = {
 //                {
 //                    
 //                                      "weight": "2kg",
-//                    "hard_disc":"750GB",
+//                    "harddisc":"750GB",
 //                    "ram":"4_GB","brand": "dell",
 //                    "grapic_card":"3GB",
 //                    "displaybleName": "Dell_750",
@@ -115,7 +115,7 @@ var electronics_filters = {
 //            "Dell2": 
 //                {
 //                    "weight": "3kg",
-//                    "hard_disc":"1TB",
+//                    "harddisc":"1TB",
 //                    "ram":"8_GB","brand": "dell",
 //                    "grapic_card":"3GB",
 //                    "displaybleName": "Dell_1000",
@@ -129,7 +129,7 @@ var electronics_filters = {
 //            "HP1": 
 //                {
 //                                    "weight": "1kg",
-//                    "hard_disc":"500GB",
+//                    "harddisc":"500GB",
 //                    "ram":"2_GB","brand": "hp",
 //                    "grapic_card":"1GB",
 //                    "displaybleName": "HP_500",
@@ -144,7 +144,7 @@ var electronics_filters = {
 //           "HP2": 
 //                {
 //                                      "weight": "3kg",
-//                    "hard_disc":"1TB",
+//                    "harddisc":"1TB",
 //                    "ram":"8_GB","brand": "hp",
 //                    "grapic_card":"5GB",
 //
@@ -165,7 +165,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "1kg",
-        "hard_disc":"500GB",
+        "harddisc":"500GB",
         "ram":"2_GB",
         "brand": "toshiba",
         "grapic_card":"1GB",
@@ -178,7 +178,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "2kg",
-        "hard_disc":"750GB",
+        "harddisc":"750GB",
         "ram":"4_GB","brand": "toshiba",
         "grapic_card":"3GB",
         "displaybleName": "Toshiba 750",
@@ -192,7 +192,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "3kg",
-        "hard_disc":"1TB",
+        "harddisc":"1TB",
         "ram":"8_GB","brand": "toshiba",
         "grapic_card":"3GB",
         "displaybleName": "Toshiba 1000",
@@ -206,7 +206,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "1kg",
-        "hard_disc":"500GB",
+        "harddisc":"500GB",
         "ram":"2_GB","brand": "lenovo",
         "grapic_card":"1GB",
         "displaybleName": "Lenovo 500",
@@ -218,7 +218,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "2kg",
-        "hard_disc":"750GB",
+        "harddisc":"750GB",
         "ram":"4_GB","brand": "lenovo",
         "grapic_card":"3GB",
         "displaybleName": "Lenovo 750",
@@ -232,7 +232,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "2kg",
-        "hard_disc":"750GB",
+        "harddisc":"750GB",
         "ram":"4_GB","brand": "dell",
         "grapic_card":"3GB",
         "displaybleName": "LDell750",
@@ -245,7 +245,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "3kg",
-        "hard_disc":"1TB",
+        "harddisc":"1TB",
         "ram":"8_GB","brand": "dell",
         "grapic_card":"3GB",
         "displaybleName": "Dell 1000",
@@ -258,7 +258,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "1kg",
-        "hard_disc":"500GB",
+        "harddisc":"500GB",
         "ram":"2_GB","brand": "hp",
         "grapic_card":"1GB",
         "displaybleName": "HP 500",
@@ -271,7 +271,7 @@ var inner_image= {
         "image3":"",
         "image4":"",
         "weight": "3kg",
-        "hard_disc":"1TB",
+        "harddisc":"1TB",
         "ram":"8_GB","brand": "hp",
         "grapic_card":"5GB",
         "displaybleName": "HP 1000",
@@ -475,7 +475,7 @@ $(document).ready(function() {
 	           <div class="col-xs-12 col-sm-6 col-md-4 bookimage" style="padding:0px;">\
 	           <div class="text-center" ><a href="/case_study1/electronicDesc.do?id='+key+'"><img src="'+electronics_list_array["image"]+'" class="'+electronics_list_array["image"]+' img-thumbnail" style="width: 250px; height: 245px;"></a></div>\
 	           <div class="text-center" ><p><strong>'+electronics_list_array["displaybleName"]+'</strong></p></div>\
-	           <div class="text-primary"><p><span class="text-left" style="padding-left:25%;">weight :'+electronics_list_array["weight"]+'</span><span class="text-right" style="padding-left:8%">Hard Disc :'+electronics_list_array["hard_disc"]+'</span></div>\
+	           <div class="text-primary"><p><span class="text-left" style="padding-left:25%;">weight :'+electronics_list_array["weight"]+'</span><span class="text-right" style="padding-left:8%">Hard Disc :'+electronics_list_array["harddisc"]+'</span></div>\
 	           </div>\
 	           </div>\
 	           </div>';
