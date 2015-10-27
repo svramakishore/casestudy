@@ -59,7 +59,6 @@ $(document).ready(function(){
 				$.ajax({
 					url:"totalAmount.do",
 					success:function(totalammount){
-						console.log(totalammount);
 						$("#totalamount").text(totalammount);
 					}
 				});

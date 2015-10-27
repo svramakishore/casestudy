@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$.ajax({
-		url:"IsSignedIn",
+		url:"isSignedIn.do",
 		success:function(isLogged){
 			if(isLogged.trim() === "yes"){
 				console.log("show");
